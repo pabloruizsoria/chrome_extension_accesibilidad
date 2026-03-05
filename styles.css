@@ -1,0 +1,21 @@
+/* Estilos base para la extensión de accesibilidad */
+
+/* Este archivo se inyecta en todas las páginas */
+/* Los estilos dinámicos se aplican a través de content.js */
+
+/* Asegurar que las transiciones sean suaves */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Estilo para palabras con hover */
+.accessibility-word {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+/* Prevenir problemas de layout */
+.accessibility-word:hover {
+  display: inline;
+}

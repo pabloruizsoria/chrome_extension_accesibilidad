@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesibilidad Web</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #4CAF50;
+    }
+    
+    .control-group {
+      background: white;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #555;
+      font-size: 13px;
+    }
+    
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    
+    select:hover {
+      border-color: #4CAF50;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+    
+    button.primary {
+      background: #4CAF50;
+      color: white;
+    }
+    
+    button.primary:hover {
+      background: #45a049;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    button.toggle {
+      background: #2196F3;
+      color: white;
+    }
+    
+    button.toggle:hover {
+      background: #0b7dda;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    button.toggle.active {
+      background: #FF9800;
+    }
+    
+    button.toggle.active:hover {
+      background: #e68900;
+    }
+    
+    .status {
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+      font-style: italic;
+    }
+    
+    .reset-section {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+    }
+    
+    button.reset {
+      background: #f44336;
+      color: white;
+    }
+    
+    button.reset:hover {
+      background: #da190b;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔍 Accesibilidad Web</h2>
+  
+  <div class="control-group">
+    <label>Texto en Mayúsculas</label>
+    <button id="toggleUppercase" class="toggle">Activar Mayúsculas</button>
+    <div class="status" id="uppercaseStatus">Estado: Desactivado</div>
+  </div>
+  
+  <div class="control-group">
+    <label for="fontSelect">Tipo de Fuente</label>
+    <select id="fontSelect">
+      <option value="default">Por Defecto</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Comic Sans MS">Comic Sans</option>
+    </select>
+  </div>
+  
+  <div class="control-group">
+    <label>Tamaño de Fuente</label>
+    <button id="fontSize18" class="primary">Establecer 18 Puntos</button>
+  </div>
+  
+  <div class="control-group">
+    <label>Alto Contraste</label>
+    <button id="highContrast" class="primary">Fondo Amarillo y Texto Negro</button>
+  </div>
+  
+  <div class="control-group">
+    <label>Modo Hover en Palabras</label>
+    <button id="toggleHover" class="toggle">Activar Modo Hover</button>
+    <div class="status" id="hoverStatus">Estado: Desactivado</div>
+  </div>
+  
+  <div class="control-group">
+    <label for="letterSpacingSelect">Espaciado entre Caracteres</label>
+    <select id="letterSpacingSelect">
+      <option value="normal">Normal</option>
+      <option value="0.07em">+7%</option>
+      <option value="0.14em">+14%</option>
+    </select>
+  </div>
+  
+  <div class="reset-section">
+    <button id="resetAll" class="reset">Restablecer Todo</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
