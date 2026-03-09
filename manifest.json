@@ -1,12 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Accesibilidad Web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extensión de Chrome para mejorar la accesibilidad de sitios web",
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"

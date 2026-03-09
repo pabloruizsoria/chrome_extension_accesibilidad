@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   getCurrentDomain((domain, tabId) => {
     // Cargar configuración existente
     loadSettings(domain);
-    
+
     // Obtener configuración actual
     chrome.storage.local.get([domain], (result) => {
       let settings = result[domain] || {
@@ -89,45 +89,45 @@ document.addEventListener('DOMContentLoaded', () => {
         hoverMode: false,
         letterSpacing: 'normal'
       };
-      
+
       // Toggle Mayúsculas
       document.getElementById('toggleUppercase').addEventListener('click', () => {
         settings.uppercase = !settings.uppercase;
         updateUI(settings);
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Selector de Fuente
       document.getElementById('fontSelect').addEventListener('change', (e) => {
         settings.font = e.target.value;
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Tamaño de Fuente 18pt
       document.getElementById('fontSize18').addEventListener('click', () => {
         settings.fontSize = true;
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Alto Contraste
       document.getElementById('highContrast').addEventListener('click', () => {
         settings.highContrast = true;
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Toggle Hover
       document.getElementById('toggleHover').addEventListener('click', () => {
         settings.hoverMode = !settings.hoverMode;
         updateUI(settings);
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Espaciado de Caracteres
       document.getElementById('letterSpacingSelect').addEventListener('change', (e) => {
         settings.letterSpacing = e.target.value;
         saveAndApply(domain, tabId, settings);
       });
-      
+
       // Restablecer Todo
       document.getElementById('resetAll').addEventListener('click', () => {
         settings = {
